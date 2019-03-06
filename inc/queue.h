@@ -2,6 +2,8 @@ class queueNode
 {
     private:
     void *data;
+
+    public:
     queueNode *next, *prev;
 
     queueNode()
@@ -17,6 +19,9 @@ class queueNode
         this->next = NULL;
         this->prev = NULL;
     }
+    int setData(void *data);
+    int getData(void **data);
+    int addNode();
 };
 
 class queue
@@ -39,5 +44,6 @@ class queue
     int enqueue(void *data);
     int dequeue(void **data);
     int sizeOfQueue();
-    int isEmptyQueue();
+    bool isEmptyQueue();
+    int printQ();
 };
