@@ -12,6 +12,10 @@ int main()
     int *out= NULL;
     int a[6] = {1,2,3,4,5,6};
     size_t size_a =  sizeof(a)/sizeof(a[0]);
+
+    cout<<"isempty:"<<q.isEmptyQueue()<<endl;
+    cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
+    
     for(int j = 0;j<5;j++)
     {
         for(int i =0;i<size_a;i++)
@@ -28,6 +32,9 @@ int main()
         
         q.printQ();
         
+        cout<<"isempty:"<<q.isEmptyQueue()<<endl;
+        cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
+
         for(int i =0;i<size_a+1;i++)
         {
             if(EMPTY_QUEUE != q.dequeue((void **)&out))
@@ -38,6 +45,8 @@ int main()
             }
         }
         q.printQ();
+        cout<<"isempty:"<<q.isEmptyQueue()<<endl;
+        cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
     }
     getch();
     return ESUCCESS;

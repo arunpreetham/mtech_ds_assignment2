@@ -86,7 +86,6 @@ int queue::sizeOfQueue()
         return 0;
     }
     int count = 0;
-    void *data = NULL;
     queueNode *temp = this->front;
     do
     {
