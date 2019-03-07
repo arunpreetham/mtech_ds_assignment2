@@ -1,11 +1,14 @@
+class queue;
+
 class queueNode
 {
+    friend class queue;
     private:
     void *data;
 
-    public:
     queueNode *next, *prev;
 
+    public:
     queueNode()
     {
         this->data = NULL;
@@ -28,11 +31,13 @@ class queue
 {
     private:
     queueNode *front;
+    size_t sizeOfQ;
 
     public:
     queue()
     {
         this->front = NULL;
+        this->sizeOfQ = 0;
     }
 
     ~queue()
@@ -40,10 +45,10 @@ class queue
         this->front = NULL;
     }
 
-    public:
     int enqueue(void *data);
     int dequeue(void **data);
     int sizeOfQueue();
     bool isEmptyQueue();
     int printQ();
+    int peek(void *&data); //view the next element which is going to be dequeued
 };

@@ -35,6 +35,7 @@ int queue::enqueue(void* data)
         this->front->prev = node;
         node->next = this->front;         
     }
+    this->sizeOfQ++;
 }
 
 int queue::dequeue( void **data )
@@ -58,6 +59,7 @@ int queue::dequeue( void **data )
     
     free(temp);
     temp = NULL;
+    this->sizeOfQ--;
 }
 
 int queue::printQ()
@@ -81,17 +83,7 @@ int queue::printQ()
 
 int queue::sizeOfQueue()
 {
-    if( NULL == this->front )
-    {
-        return 0;
-    }
-    int count = 0;
-    queueNode *temp = this->front;
-    do
-    {
-        count++;
-    }while(NULL != temp && temp != this->front);
-    return count;
+    return this->sizeOfQ;
 }
 
 bool queue::isEmptyQueue()
@@ -101,4 +93,14 @@ bool queue::isEmptyQueue()
         return true;
     }
     return false;
+}
+
+int queue::peek(void *&data)
+{
+    if( NULL == this->front )
+    {
+        return EMPTY_QUEUE;
+    }
+    this->front->getData(&data);
+    return ESUCCESS;
 }

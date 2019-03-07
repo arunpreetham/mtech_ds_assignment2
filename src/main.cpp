@@ -15,7 +15,8 @@ int main()
 
     cout<<"isempty:"<<q.isEmptyQueue()<<endl;
     cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
-    
+    if(ESUCCESS == q.peek((void*&)out))
+        cout<<"Peek() Out:"<<*out<<endl;
     for(int j = 0;j<5;j++)
     {
         for(int i =0;i<size_a;i++)
@@ -34,6 +35,8 @@ int main()
         
         cout<<"isempty:"<<q.isEmptyQueue()<<endl;
         cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
+        if(ESUCCESS == q.peek((void*&)out))
+            cout<<"Peek() Out:"<<*out<<endl;
 
         for(int i =0;i<size_a+1;i++)
         {
@@ -47,6 +50,8 @@ int main()
         q.printQ();
         cout<<"isempty:"<<q.isEmptyQueue()<<endl;
         cout<<"sizeofQ:"<<q.sizeOfQueue()<<endl;
+        if(ESUCCESS == q.peek((void*&)out))
+            cout<<"Peek() Out:"<<*out<<endl;
     }
     getch();
     return ESUCCESS;
